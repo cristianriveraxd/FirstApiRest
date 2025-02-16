@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%nw+xe&2#^x54s4m)r!%2#cb+pdam5x*opo83qjj8*drej87u1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dane-sharing-bonefish.ngrok-free.app']
+ALLOWED_HOSTS = ['dane-sharing-bonefish.ngrok-free.app','localhost', '127.0.0.1','18.118.28.179','0.0.0.0']
 
 
 # Application definition
