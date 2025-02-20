@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: API de Usuarios y Productos
+  description: API REST con Django Rest Framework para gestionar usuarios y productos.
+  version: 1.0.0
+servers:
+  - url: http://3.19.235.79:8000/api/
+paths:
+  /usuarios:
+    get:
+      summary: Obtener lista de usuarios
+      description: Retorna una lista de todos los usuarios registrados.
+      responses:
+        '200':
+          description: Lista de usuarios obtenida correctamente.
+          content:
+            application/json:
+              example:
+                - id: 1
+                  usuario: "usuario1"
+                  contraseña: "password123"
+                  nombre: "Juan"
+                  apellido: "Pérez"
+    post:
+      summary: Crear un nuevo usuario
+      description: Agrega un nuevo usuario a la base de datos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              usuario: "nuevo_usuario"
+              contraseña: "password456"
+              nombre: "Maria"
+              apellido: "Gómez"
+      responses:
+        '201':
+          description: Usuario creado exitosamente.
+  /usuarios/{id}:
+    get:
+      summary: Obtener un usuario específico
+      description: Retorna los datos de un usuario según su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID del usuario.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Datos del usuario obtenidos correctamente.
+          content:
+            application/json:
+              example:
+                id: 1
+                usuario: "usuario1"
+                nombre: "Juan"
+                apellido: "Pérez"
+        '404':
+          description: Usuario no encontrado.
+  /productos:
+    get:
+      summary: Obtener lista de productos
+      description: Retorna una lista de todos los productos registrados.
+      responses:
+        '200':
+          description: Lista de productos obtenida correctamente.
+          content:
+            application/json:
+              example:
+                - id: 1
+                  descripcion: "Producto A"
+                  stock: 50
+                  ubicacion: "A1"
+    post:
+      summary: Crear un nuevo producto
+      description: Agrega un nuevo producto a la base de datos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              descripcion: "Producto B"
+              stock: 30
+              ubicacion: "B2"
+      responses:
+        '201':
+          description: Producto creado exitosamente.
+  /productos/{id}:
+    get:
+      summary: Obtener un producto específico
+      description: Retorna los datos de un producto según su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID del producto.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Datos del producto obtenidos correctamente.
+          content:
+            application/json:
+              example:
+                id: 1
+                descripcion: "Producto A"
+                stock: 50
+                ubicacion: "A1"
+        '404':
+          description: Producto no encontrado.
