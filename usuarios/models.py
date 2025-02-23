@@ -44,7 +44,7 @@ class UsuarioJorge(models.Model):
     nombre_usuario = models.CharField(max_length=150)
     email_usuario = models.EmailField(unique=True)
     contrasena_usuario = models.CharField(max_length=255)
-    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    perfil = models.CharField(max_length=100, unique=True) 
 
     class Meta:  
         db_table = 'usuariosjp'
