@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuarioJorge, ClienteRocha
+from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuariosJorge, ClienteRocha
 
 class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
