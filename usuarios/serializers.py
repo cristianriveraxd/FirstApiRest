@@ -36,7 +36,7 @@ class UsuarioJorgeSerializer(serializers.ModelSerializer):
         model = UsuarioJorge
         fields = '_all_'
 
-class ClienteRochaJorgeSerializer(serializers.ModelSerializer):
+class ClienteRochaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ClienteRocha
