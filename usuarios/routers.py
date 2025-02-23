@@ -36,11 +36,17 @@ class PedidoJDSerializer(serializers.ModelSerializer):
 class UsuariosJDViewSet(viewsets.ModelViewSet):
     queryset = UsuariosJD.objects.all()
     serializer_class = UsuariosJDSerializer
+    def get_queryset(self):
+        getUsersJuan()  # 🔹 Llama a la función antes de obtener los datos
+        return ClienteRocha.objects.all()
 
 class PedidoJDViewSet(viewsets.ModelViewSet):
     queryset = PedidoJD.objects.all()
     serializer_class = PedidoJDSerializer
-
+    def get_queryset(self):
+        getOrderJuan()  # 🔹 Llama a la función antes de obtener los datos
+        return ClienteRocha.objects.all()
+        
 #serializer Api Jorge
 class PerfilJorgeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -50,7 +56,9 @@ class PerfilJorgeSerializer(serializers.ModelSerializer):
 class PerfilJorgeViewSet(viewsets.ModelViewSet):
     queryset = PerfilJorge.objects.all()
     serializer_class = PerfilJorgeSerializer
-    
+    def get_queryset(self):
+        getProfileJorge()  # 🔹 Llama a la función antes de obtener los datos
+        return ClienteRocha.objects.all()
     
 class UsuariosJorgeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -60,6 +68,9 @@ class UsuariosJorgeSerializer(serializers.ModelSerializer):
 class UsuariosJorgeViewSet(viewsets.ModelViewSet):
     queryset = UsuariosJorge.objects.all()
     serializer_class = UsuariosJorgeSerializer
+    def get_queryset(self):
+        getUsersJorge()  # 🔹 Llama a la función antes de obtener los datos
+        return ClienteRocha.objects.all()
     
 
 #serializers Api Rocha
