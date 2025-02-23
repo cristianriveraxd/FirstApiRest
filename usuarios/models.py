@@ -19,6 +19,7 @@ class Productos(models.Model):
     class Meta:
         db_table = 'productos'
 
+#consumo de datos Juan David
 class UsuariosJD(models.Model):
     nombre = models.CharField(max_length=80)
     email = models.EmailField(unique=True)
@@ -33,3 +34,37 @@ class PedidoJD(models.Model):
 
     class Meta:
         db_table = 'pedidosjd'  
+
+#consumo de datos Jorge
+class PerfilJorge(models.Model):
+    id = models.AutoField(primary_key=True)  
+    nombre_perfil = models.CharField(max_length=100, unique=True) 
+
+    class Meta:  
+        db_table = 'perfiljp' 
+      
+
+    def _str_(self):
+        return self.nombre_perfil 
+                
+        
+class UsuarioJorge(models.Model):
+    nombre_usuario = models.CharField(max_length=150)
+    email_usuario = models.EmailField(unique=True)
+    contrasena_usuario = models.CharField(max_length=255)
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+
+    class Meta:  
+        db_table = 'usuariosjp'
+
+#consumo de datos Leon Fael
+class ClienteRocha(models.Model):
+   id = models.AutoField(primary_key=True)  
+   nombre = models.CharField(max_length=100)
+   email = models.EmailField(unique=True)
+
+   class Meta:
+       db_table = 'clienteslf'  
+
+   def _str_(self):
+       return self.nombre
