@@ -69,11 +69,10 @@ class ClienteRochaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ClienteRochaViewSet(viewsets.ModelViewSet):
+    queryset = ClienteRocha.objects.all()  # 🔹 Agrega esta línea
     serializer_class = ClienteRochaSerializer
-
     def get_queryset(self):
-        getClientRocha()  # Ejecutar la función para actualizar la BD
-
-        # 🔹 Retornar los datos actualizados
+        getClientRocha()  # 🔹 Llama a la función antes de obtener los datos
         return ClienteRocha.objects.all()
+
 
