@@ -6,10 +6,11 @@ from .views import *
 router = DefaultRouter()
 router.register(r'usuarios', UsuariosViewSet)
 router.register(r'productos', ProductosViewSet)
-router.register(r'usuarios-jd', UsuarioViewSet)
-router.register(r'pedidos-jd', PedidoViewSet)
-router.register(r'perfil-jp', PerfilViewSet)
-router.register(r'clientes-r', ClienteViewSet)
+router.register(r'usuarios-jd', UsuariosJDViewSet)
+router.register(r'pedidos-jd', PedidoJDViewSet)
+router.register(r'perfil-jp', PerfilJorgeViewSet)
+router.register(r'usuarios-jp', UsuariosJorgeViewSet)
+router.register(r'clientes-r', ClienteRochaViewSet)
 
 
 urlpatterns = [
