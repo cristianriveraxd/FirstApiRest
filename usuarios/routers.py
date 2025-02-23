@@ -72,8 +72,6 @@ class ClienteRochaViewSet(viewsets.ModelViewSet):
     serializer_class = ClienteRochaSerializer
 
     def get_queryset(self):
-        # 🔹 Llamar al método para obtener los datos antes de devolver el queryset
-        from .getData import getClientRocha  # Importar la función si está en otro archivo
         getClientRocha()  # Ejecutar la función para actualizar la BD
 
         # 🔹 Retornar los datos actualizados
