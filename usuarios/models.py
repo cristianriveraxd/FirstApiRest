@@ -28,7 +28,7 @@ class UsuariosJD(models.Model):
         db_table = 'usuariosjd'
 
 class PedidoJD(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='pedidos')
+    usuario = models.CharField(max_length=80)
     producto = models.CharField(max_length=120)
     cantidad = models.IntegerField()
 
