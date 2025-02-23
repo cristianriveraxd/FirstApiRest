@@ -42,12 +42,7 @@ class PerfilJorge(models.Model):
 
     class Meta:  
         db_table = 'perfiljp' 
-      
-
-    def _str_(self):
-        return self.nombre_perfil 
-                
-        
+              
 class UsuarioJorge(models.Model):
     nombre_usuario = models.CharField(max_length=150)
     email_usuario = models.EmailField(unique=True)
@@ -65,6 +60,3 @@ class ClienteRocha(models.Model):
 
    class Meta:
        db_table = 'clienteslf'  
-
-   def _str_(self):
-       return self.nombre
