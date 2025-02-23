@@ -22,12 +22,12 @@ class ProductosViewSet(viewsets.ModelViewSet):
     serializer_class = ProductosSerializer
 
 #serializer Api Juan David
-class UsuarioSerializer(serializers.ModelSerializer):
+class UsuariosJDSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = '__all__'
 
-class PedidoSerializer(serializers.ModelSerializer):
+class PedidoJDSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pedido
         fields = '__all__'
