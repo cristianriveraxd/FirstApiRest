@@ -1,6 +1,6 @@
 import requests
 from rest_framework import generics
-from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuarioJorge, ClienteRocha
+from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuariosJorge, ClienteRocha
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.views import APIView 
@@ -48,13 +48,13 @@ class PerfilJorgeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = PerfilJorge.objects.all()
     serializer_class = PerfilJorgeSerializer   
 
-class UsuarioJorgeListCreate(generics.ListCreateAPIView):
-    queryset = UsuarioJorge.objects.all()
-    serializer_class = UsuarioJorgeSerializer
+class UsuariosJorgeListCreate(generics.ListCreateAPIView):
+    queryset = UsuariosJorge.objects.all()
+    serializer_class = UsuariosJorgeSerializer
 
-class UsuarioJorgeDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = UsuarioJorge.objects.all()
-    serializer_class = UsuarioJorgeSerializer
+class UsuariosJorgeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = UsuariosJorge.objects.all()
+    serializer_class = UsuariosJorgeSerializer
 
 #VIEWSAPIROCHA
 class ClienteRochaListCreate(generics.ListCreateAPIView):
