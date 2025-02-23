@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from usuarios.views import ApiJorge
+from usuarios.views import ApiJorge, ApiJuanda, ApiRocha
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('usuarios.urls')),
-    path('apiJorge/', ApiJorge.as_view(), name="external-api"),
+    path('apiJorge/', ApiJorge.as_view()),
+    path('apiJuanda/', ApiJuanda.as_view()),
+    path('apiRocha/', ApiRocha.as_view()),
    
 ]
