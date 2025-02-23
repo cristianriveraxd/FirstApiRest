@@ -40,7 +40,7 @@ class PerfilJorge(models.Model):
     class Meta:  
         db_table = 'perfiljp' 
               
-class UsuarioJorge(models.Model):
+class UsuariosJorge(models.Model):
     nombre_usuario = models.CharField(max_length=150)
     email_usuario = models.EmailField(unique=True)
     contrasena_usuario = models.CharField(max_length=255)
