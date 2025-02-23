@@ -32,41 +32,41 @@ class PedidoJDSerializer(serializers.ModelSerializer):
         model = Pedido
         fields = '__all__'
 
-class UsuarioViewSet(viewsets.ModelViewSet):
-    queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializer
+class UsuariosJDViewSet(viewsets.ModelViewSet):
+    queryset = UsuariosJD.objects.all()
+    serializer_class = UsuariosJDSerializer
 
-class PedidoViewSet(viewsets.ModelViewSet):
-    queryset = Pedido.objects.all()
-    serializer_class = PedidoSerializer
+class PedidoJDViewSet(viewsets.ModelViewSet):
+    queryset = PedidoJD.objects.all()
+    serializer_class = PedidoJDSerializer
 
 #serializer Api Jorge
-class PerfilSerializer(serializers.ModelSerializer):
+class PerfilJorgeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Perfil
+        model = PerfilJorge
         fields = '__all__'
 
-class PerfilViewSet(viewsets.ModelViewSet):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
+class PerfilJorgeViewSet(viewsets.ModelViewSet):
+    queryset = PerfilJorge.objects.all()
+    serializer_class = PerfilJorgeSerializer
     
     
-class ProductosSerializer(serializers.ModelSerializer):
+class UsuariosJorgeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Productos
+        model = UsuariosJorge
         fields = '__all__'
 
-class ProductosViewSet(viewsets.ModelViewSet):
-    queryset = Productos.objects.all()
-    serializer_class = ProductosSerializer
+class UsuariosJorgeViewSet(viewsets.ModelViewSet):
+    queryset = UsuariosJorge.objects.all()
+    serializer_class = UsuariosJorgeSerializer
     
 
 #serializers Api Rocha
-class ClienteSerializer(serializers.ModelSerializer):
+class ClienteRochaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cliente
+        model = ClienteRocha
         fields = '__all__'
 
-class ClienteViewSet(viewsets.ModelViewSet):
-    queryset = Cliente.objects.all()
-    serializer_class = ClienteSerializer
+class ClienteRochaViewSet(viewsets.ModelViewSet):
+    queryset = ClienteRocha.objects.all()
+    serializer_class = ClienteRochaSerializer
