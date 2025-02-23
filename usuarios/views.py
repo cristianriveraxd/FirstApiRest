@@ -1,10 +1,11 @@
 import requests
 from rest_framework import generics
-from .models import Usuarios, Productos
-from .serializers import UsuariosSerializer, ProductosSerializer
+from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuarioJorge, ClienteRocha
+from .serializers import *
 from rest_framework.response import Response
 from rest_framework.views import APIView 
 
+#VIEWSMYAPPI
 class UsuariosListCreate(generics.ListCreateAPIView):
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
@@ -21,12 +22,78 @@ class ProductosDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Productos.objects.all()
     serializer_class = ProductosSerializer
     
-class ApiJorge(APIView):
+#VIEWSAPIJUANDA
+class UsuariosJDListCreate(generics.ListCreateAPIView):
+    queryset = UsuariosJD.objects.all()
+    serializer_class = UsuariosJDSerializer
+
+class UsuariosJDDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = UsuariosJD.objects.all()
+    serializer_class = UsuariosJDSerializer
+
+class PedidoJDListCreate(generics.ListCreateAPIView):
+    queryset = PedidoJD.objects.all()
+    serializer_class = PedidoJDSerializer
+
+class PedidoJDDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = PedidoJD.objects.all()
+    serializer_class = PedidoJDSerializer
+
+#VIEWSAPIJORGE
+class PerfilJorgeListCreate(generics.ListCreateAPIView):
+    queryset = PerfilJorge.objects.all()
+    serializer_class = PerfilJorgeSerializer
+
+class PerfilJorgeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = PerfilJorge.objects.all()
+    serializer_class = PerfilJorgeSerializer   
+
+class UsuarioJorgeListCreate(generics.ListCreateAPIView):
+    queryset = UsuarioJorge.objects.all()
+    serializer_class = UsuarioJorgeSerializer
+
+class UsuarioJorgeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = UsuarioJorge.objects.all()
+    serializer_class = UsuarioJorgeSerializer
+
+#VIEWSAPIROCHA
+class ClienteRochaListCreate(generics.ListCreateAPIView):
+    queryset = ClienteRocha.objects.all()
+    serializer_class = ClienteRochaSerializer
+
+class ClienteRochaDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Productos.objects.all()
+    serializer_class = ClienteRochaSerializer 
+
+
+#CONSUMO DE APIS
+class ApiJuanda(APIView):
     def get(self, request):
-        url = "http://54.157.69.113:8000/api"  # API externa de ejemplo
+        url = "http://54.157.69.113:8000/api"  
         response = requests.get(url)
         
         if response.status_code == 200:
-            return Response(response.json())  # Devolver los datos de la API externa
+            return Response(response.json())  
         else:
-            return Response({"error": "No se pudo obtener datos"}, status=response.status_code)
+            return Response({"error": "No se pudo obtener la API de JuanDavid"}, status=500)
+
+class ApiJorge(APIView):
+    def get(self, request):
+        url = "http://18.221.57.79:8000/api"
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            return Response(response.json())  
+        else:
+            return Response({"error": "No se pudo obtener la API de Jorge"}, status=500)
+
+class ApiRocha(APIView):
+    def get(self, request):
+        url = "http://18.190.176.232:8000/api"
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            return Response(response.json())  
+        else:
+            return Response({"error": "No se pudo obtener la API de Rocha"}, status=500)
+
