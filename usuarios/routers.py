@@ -1,4 +1,4 @@
-from usuarios.models import Usuarios, Productos
+from usuarios.models import *
 from rest_framework import viewsets
 from rest_framework import serializers
 
