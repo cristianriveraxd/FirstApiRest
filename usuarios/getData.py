@@ -12,14 +12,14 @@ def getUsersJuan():
         
         for item in data:
             # Verificar si ya existe un registro con el mismo 'id'
-            existing_record = DatosExternosjuan.objects.filter(id=item["id"]).first()
+            existing_record = UsuariosJD.objects.filter(id=item["id"]).first()
 
             if existing_record:
                 # Si el registro ya existe, no hace nada
                 print(f"El registro con ID {item['id']} ya existe y no se agrega.")
             else:
                 # Si el registro no existe, lo agrega
-                DatosExternosjuan.objects.create(
+                UsuariosJD.objects.create(
                     id=item["id"],  # Asegurándote de que la primary key (id) se use al crear el nuevo registro
                     nombre=item["nombre"],
                     email=item["email"]
@@ -39,14 +39,14 @@ def getOrderJuan():
         
         for item in data:
             # Verificar si ya existe un registro con el mismo 'id'
-            existing_record = DatosExternosjuan.objects.filter(id=item["id"]).first()
+            existing_record = PedidoJD.objects.filter(id=item["id"]).first()
 
             if existing_record:
                 # Si el registro ya existe, no hace nada
                 print(f"El registro con ID {item['id']} ya existe y no se agrega.")
             else:
                 # Si el registro no existe, lo agrega
-                DatosExternosjuan.objects.create(
+                PedidoJD.objects.create(
                     id=item["id"],  # Asegurándote de que la primary key (id) se use al crear el nuevo registro
                     producto=item["producto"],
                     cantidad=item["cantidad"],
@@ -68,14 +68,14 @@ def getUsersJorge():
         
         for item in data:
             # Verificar si ya existe un registro con el mismo 'id'
-            existing_record = DatosExternoscris.objects.filter(id=item["id"]).first()
+            existing_record = UsuariosJorge.objects.filter(id=item["id"]).first()
 
             if existing_record:
                 # Si el registro ya existe, no hace nada
                 print(f"El registro con ID {item['id']} ya existe y no se agrega.")
             else:
                 # Si el registro no existe, lo agrega
-                DatosExternoscris.objects.create(
+                UsuariosJorge.objects.create(
                     id=item["id"],  # Asegurándote de que la primary key (id) se use al crear el nuevo registro
                     nombre_usuario =item["nombre_usuario"],
                     email_usuario =item["email_usuario"],
@@ -97,14 +97,14 @@ def getProfileJorge():
         
         for item in data:
             # Verificar si ya existe un registro con el mismo 'id'
-            existing_record = DatosExternoscris.objects.filter(id=item["id"]).first()
+            existing_record = PerfilJorge.objects.filter(id=item["id"]).first()
 
             if existing_record:
                 # Si el registro ya existe, no hace nada
                 print(f"El registro con ID {item['id']} ya existe y no se agrega.")
             else:
                 # Si el registro no existe, lo agrega
-                DatosExternoscris.objects.create(
+                PerfilJorge.objects.create(
                     id=item["id"],  # Asegurándote de que la primary key (id) se use al crear el nuevo registro
                     nombre_perfil =item["nombre_perfil"]
                 )
@@ -123,14 +123,14 @@ def getClientRocha():
         
         for item in data:
             # Verificar si ya existe un registro con el mismo 'id'
-            existing_record = DatosExternoscris.objects.filter(id=item["id"]).first()
+            existing_record = ClienteRocha.objects.filter(id=item["id"]).first()
 
             if existing_record:
                 # Si el registro ya existe, no hace nada
                 print(f"El registro con ID {item['id']} ya existe y no se agrega.")
             else:
                 # Si el registro no existe, lo agrega
-                DatosExternoscris.objects.create(
+                ClienteRocha.objects.create(
                     id=item["id"],  # Asegurándote de que la primary key (id) se use al crear el nuevo registro
                     nombre =item["nombre"],
                     email =item["email"]
