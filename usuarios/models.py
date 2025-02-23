@@ -8,7 +8,7 @@ class Usuarios(models.Model):
     apellido = models.CharField(max_length=80)
 
     class Meta:
-        db_table = 'USUARIOS' 
+        db_table = 'usuarios' 
 
 class Productos(models.Model):
    
@@ -17,4 +17,19 @@ class Productos(models.Model):
     ubicacion = models.CharField(max_length=20)
 
     class Meta:
-        db_table = 'PRODUCTOS'
+        db_table = 'productos'
+
+class UsuariosJD(models.Model):
+    nombre = models.CharField(max_length=80)
+    email = models.EmailField(unique=True)
+
+    class Meta:
+        db_table = 'usuariosjd'
+
+class PedidoJD(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='pedidos')
+    producto = models.CharField(max_length=120)
+    cantidad = models.IntegerField()
+
+    class Meta:
+        db_table = 'pedidosjd'  
