@@ -30,10 +30,10 @@ class PerfilJorgeSerializer(serializers.ModelSerializer):
         model = PerfilJorge
         fields = '_all_'
 
-class UsuarioJorgeSerializer(serializers.ModelSerializer):
+class UsuariosJorgeSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = UsuarioJorge
+        model = UsuariosJorge
         fields = '_all_'
 
 class ClienteRochaSerializer(serializers.ModelSerializer):
