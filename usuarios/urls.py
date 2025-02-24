@@ -9,7 +9,7 @@ router.register(r'productos', ProductosViewSet)
 router.register(r'UsuariosJD', UsuariosJDViewSet)
 router.register(r'PedidoJD', PedidoJDViewSet)
 router.register(r'PerfilJorge', PerfilJorgeViewSet)
-router.register(r'UsuariosJorge', UsuariosJorgeViewSet)
+#router.register(r'UsuariosJorge', UsuariosJorgeViewSet)
 router.register(r'ClienteRocha', ClienteRochaViewSet)
 
 
