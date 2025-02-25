@@ -73,4 +73,4 @@ class DatosPrivados(models.Model):
         db_table = 'datosprivados'
 
     def __str__(self):
-        return self.youtuber  # Devolvemos el nombre del YouTuber en lugar de un campo inexistente
+        return self.youtuber  
