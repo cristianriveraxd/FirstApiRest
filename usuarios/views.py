@@ -1,5 +1,5 @@
 import requests
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuariosJorge, ClienteRocha, DatosPrivados
 from .serializers import *
 from rest_framework.response import Response
