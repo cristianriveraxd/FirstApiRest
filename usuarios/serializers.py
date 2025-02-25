@@ -45,4 +45,4 @@ class ClienteRochaSerializer(serializers.ModelSerializer):
 class DatosPrivadosSerializer(serializers.ModelSerializer):
     class Meta:
         model = DatosPrivados
-        fields = '__all__'  
+        fields = 'youtuber'  
