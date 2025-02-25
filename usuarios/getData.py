@@ -62,7 +62,7 @@ def importar_csv(ruta_csv):
         lector = csv.DictReader(archivo)
         for fila in lector:
             DatosPrivados.objects.create(
-                product_name=fila['youtuber'],
+                youtuber=fila['youtuber'],
 
             )
 
