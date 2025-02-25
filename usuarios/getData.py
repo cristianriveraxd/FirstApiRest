@@ -58,13 +58,19 @@ def getClientRocha():
     })
 
 def importar_csv(ruta_csv):
-    with open(ruta_csv, newline='', encoding='utf-8') as archivo:
+    ruta_absoluta = os.path.abspath(ruta_csv)  # Asegura que la ruta sea correcta
+
+    with open(ruta_absoluta, newline='', encoding='utf-8') as archivo:
         lector = csv.DictReader(archivo)
+
         for fila in lector:
-            DatosPrivados.objects.create(
-                youtuber=fila['youtuber'],
+            try:
+                DatosPrivados.objects.create(
+                    youtuber=fila['Youtuber']  # Asegúrate de que la columna existe en el CSV
+                )
+                print(f"Importado: {fila['Youtuber']}")
+            except Exception as e:
+                print(f"Error al importar {fila['Youtuber']}: {e}")
 
-            )
-
-
-importar_csv('AppiRest/datos.csv')      
+# Ejecutar la importación
+importar_csv('AppiRest/datos.csv')
