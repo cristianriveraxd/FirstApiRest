@@ -2,6 +2,7 @@ import os
 import django
 import requests
 from .models import *
+import csv
 
 def sync_data(model, url, mapping):
     response = requests.get(url)
@@ -55,3 +56,15 @@ def getClientRocha():
         "nombre": "nombre",
         "email": "email"
     })
+
+def importar_csv(ruta_csv):
+    with open(ruta_csv, newline='', encoding='utf-8') as archivo:
+        lector = csv.DictReader(archivo)
+        for fila in lector:
+            DatosPrivados.objects.create(
+                product_name=fila['youtuber'],
+
+            )
+
+
+importar_csv('AppiRest/datos.csv')      
