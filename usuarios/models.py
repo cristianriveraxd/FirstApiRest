@@ -61,7 +61,6 @@ class ClienteRocha(models.Model):
 from django.db import models
 
 class DatosPrivados(models.Model):
-    id = models.AutoField(primary_key=True)
     rank = models.IntegerField()  # El rango es numérico
     youtuber = models.CharField(max_length=255)
     subscribers = models.BigIntegerField()  # Los suscriptores pueden ser grandes
