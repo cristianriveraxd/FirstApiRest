@@ -56,3 +56,22 @@ class ClienteRocha(models.Model):
 
    class Meta:
        db_table = 'clienteslf'  
+
+#consumo datos privados
+from django.db import models
+
+class DatosPrivados(models.Model):
+    id = models.AutoField(primary_key=True)
+    rank = models.IntegerField()  # El rango es numérico
+    youtuber = models.CharField(max_length=255)
+    subscribers = models.BigIntegerField()  # Los suscriptores pueden ser grandes
+    video_views = models.BigIntegerField()  # Las vistas de video son grandes
+    video_count = models.IntegerField()  # La cantidad de videos es numérica
+    category = models.CharField(max_length=50)  # Puede necesitar más caracteres
+    started = models.IntegerField()  # El año de inicio es un número entero
+
+    class Meta:
+        db_table = 'datosprivados'
+
+    def __str__(self):
+        return self.youtuber  # Devolvemos el nombre del YouTuber en lugar de un campo inexistente
