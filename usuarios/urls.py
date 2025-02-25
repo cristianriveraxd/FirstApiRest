@@ -11,6 +11,7 @@ router.register(r'PedidoJD', PedidoJDViewSet)
 router.register(r'PerfilJorge', PerfilJorgeViewSet)
 #router.register(r'UsuariosJorge', UsuariosJorgeViewSet)
 router.register(r'ClienteRocha', ClienteRochaViewSet)
+router.register(r'datos_privados', DatosPrivadosViewSet)
 
 
 urlpatterns = [
