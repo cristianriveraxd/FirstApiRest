@@ -97,3 +97,8 @@ class ApiRocha(APIView):
         else:
             return Response({"error": "No se pudo obtener la API de Rocha"}, status=500)
 
+#CONSUMO DATOS DEL CSV
+class DatosPrivadosViewSet(viewsets.ModelViewSet):
+    queryset = DatosPrivados.objects.all()
+    serializer_class = DatosPrivadosSerializer
+
