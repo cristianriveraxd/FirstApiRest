@@ -1,6 +1,6 @@
 import requests
 from rest_framework import generics
-from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuariosJorge, ClienteRocha
+from .models import Usuarios, Productos, UsuariosJD, PedidoJD, PerfilJorge, UsuariosJorge, ClienteRocha, DatosPrivados
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.views import APIView 
