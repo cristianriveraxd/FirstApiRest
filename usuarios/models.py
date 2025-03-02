@@ -118,7 +118,6 @@ class Trip(models.Model):
     def _str_(self):
         return f"Trip {self.id_envio} from {self.origin_location} to {self.destination_location}"
  
-from django.db import models
 
 class Envio(models.Model):
     id = models.AutoField(primary_key=True)
