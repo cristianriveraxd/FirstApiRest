@@ -102,3 +102,11 @@ class DatosPrivadosViewSet(viewsets.ModelViewSet):
     queryset = DatosPrivados.objects.all()
     serializer_class = DatosPrivadosSerializer
 
+#CONSUMO DE DATOS PROYECTO
+class DatosPrivadosCorreoViewSet(viewsets.ModelViewSet):
+    queryset = Trip.objects.all()
+    serializer_class = DatosPrivadosCorreoSerializer
+
+class EnvioViewSet(viewsets.ModelViewSet):
+    queryset = Envio.objects.all()
+    serializer_class = EnvioSerializer
