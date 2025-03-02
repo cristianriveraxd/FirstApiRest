@@ -12,7 +12,8 @@ router.register(r'PerfilJorge', PerfilJorgeViewSet)
 #router.register(r'UsuariosJorge', UsuariosJorgeViewSet)
 router.register(r'ClienteRocha', ClienteRochaViewSet)
 router.register(r'datos_privados', DatosPrivadosViewSet)
-
+router.register(r'datos_privados_correo', DatosPrivadosCorreoViewSet)
+router.register(r'datos_publicos_envios', EnvioViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
