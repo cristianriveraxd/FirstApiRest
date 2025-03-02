@@ -46,3 +46,13 @@ class DatosPrivadosSerializer(serializers.ModelSerializer):
     class Meta:
         model = DatosPrivados
         fields = ['youtuber']  
+
+class DatosPrivadosCorreoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Trip
+        fields = '__all__'
+        
+class EnvioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Envio
+        fields = '__all__'
